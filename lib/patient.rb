@@ -5,16 +5,20 @@ class Patient
     @name = name
     @@all<<self
 end
-def self.all
-  @@all
-end
 
 def new_appointment(doctor, date)
   Appointment.new(self,date, doctor)
 end
 
-def doctors
-end
 def appointments
+  Appointment.all.select{|i| i.patient}
+end
+
+def self.all
+  @@all
+end
+
+def doctors
+  appointments.map{|i| i.doctor}
 end
 end
