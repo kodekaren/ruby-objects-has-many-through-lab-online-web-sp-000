@@ -11,7 +11,7 @@ def new_appointment(doctor, date)
 end
 
 def appointments
-  Appointment.all.select{|i| i.patient}
+  Appointment.all.select{|appointment| appointment.patient}
 end
 
 def self.all
