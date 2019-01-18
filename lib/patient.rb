@@ -19,6 +19,6 @@ def self.all
 end
 
 def doctors
-  appointments.map{|i| i.doctor}
+  appointments.map{|appointment| appointment.doctor}
 end
 end
